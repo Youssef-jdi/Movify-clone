@@ -15,7 +15,9 @@ class SearchApiProvider {
     if (response.statusCode == 200) {
       return ItemFavoriteMovies.fromJson(json.decode(response.body));
     } else {
-      throw ('failed to fetch search');
+      return null;
+      
+      //throw ('failed to fetch search');
     }
   }
 }

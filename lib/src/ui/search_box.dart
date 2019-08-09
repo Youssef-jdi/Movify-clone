@@ -49,14 +49,17 @@ class _SearchBoxState extends State<SearchBox> {
                 top: 130,
                 left: 70,
                 width: 300,
+                height: 70,
                 child: new Theme(
                   data: new ThemeData(
-                    primaryColor: Colors.white,
+                    primaryColor: Theme.of(context).backgroundColor //Colors.white,
                   ),
-                  child: new TextFormField(
+                  child: new TextField(
                     maxLines: 1,
                     controller: searchcontroller,
                     decoration: new InputDecoration(
+                      filled: true,
+                      fillColor : Colors.white,
                       suffix: IconButton(
                         icon: Icon(Icons.search),
                         onPressed: () {
@@ -66,18 +69,18 @@ class _SearchBoxState extends State<SearchBox> {
                       contentPadding: EdgeInsets.fromLTRB(10, 10, 20, 30),
                       labelText: "Search for movies",
                       labelStyle:
-                          new TextStyle(color: Colors.white, fontSize: 18),
+                          new TextStyle(color: Colors.black, fontSize: 18),
                       border: new OutlineInputBorder(
                         borderRadius: new BorderRadius.circular(25),
                         borderSide: new BorderSide(),
                       ),
-                      fillColor: Colors.white,
+                     
                     ),
                     keyboardType: TextInputType.text,
-                    cursorColor: Colors.white,
+                    cursorColor: Colors.blue,
                     style: new TextStyle(
                         fontFamily: "Poppins",
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 18),
                   ),
                 ))

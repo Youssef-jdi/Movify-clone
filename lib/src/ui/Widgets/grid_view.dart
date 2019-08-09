@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 
-Widget buildGridView(var snapshot){
+Widget buildGridView(var snapshot,var context){
   return GridView.count(
     crossAxisCount: 2,
     scrollDirection: Axis.vertical,
+    
     children: List.generate(snapshot.data.results.length, (index){
       return Center(
         child: Card(
-          
+          color: Theme.of(context).backgroundColor,
           elevation: 5.0,
           child: new Container(
-            height: 150,
+            width: 150,
+            height: 170,
             alignment: Alignment.center,
             child: InkResponse(
               enableFeedback: true,

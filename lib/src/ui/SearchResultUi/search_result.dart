@@ -27,12 +27,12 @@ class _SearchResultState extends State<SearchResult> {
   @override
   Widget build(BuildContext context) {
    return new Container(
-     color: Colors.black45,
+     color: Theme.of(context).backgroundColor,
      child: StreamBuilder(
        stream: bloc.searchMovie,
        builder: (context,AsyncSnapshot<ItemFavoriteMovies> snapshot){
           if(snapshot.hasData){
-            return buildGridView(snapshot) ;
+            return buildGridView(snapshot,context) ;
           }
           else if (snapshot.hasError){
             return Text(snapshot.error.toString());
